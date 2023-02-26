@@ -1,0 +1,35 @@
+.project-container {
+  width: 100%;
+  height: fit-content;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 10px 1rem;
+}
+
+.project-container .project-header {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #808080;
+  height: fit-content;
+  width: fit-content;
+  padding: 0 12px 1rem;
+  margin: 1rem auto 2rem;
+}
+
+.project-container .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.container .project {
+  background-color: ;
+  width: 100%;
+  height: fit-content;
+  min-height: 300px;
+  margin: 10px;
+}

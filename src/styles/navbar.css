@@ -1,0 +1,24 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar .profile-icon {
+  background-size: cover;
+  background-position: center;
+  height: 90px;
+  width: 90px;
+}
+
+.navbar .menu-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
