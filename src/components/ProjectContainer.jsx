@@ -4,7 +4,7 @@ import '../styles/projectContainer.css';
 export default function ProjectContainer() {
   return (
     <div className="project-container" id="project-container">
-      <header className="project-header">Below are a few of my projects</header>
+      <header className="project-header">Past Projects Below</header>
       <div className="container">
         <div className="project">project 1</div>
         <div className="project">project 2</div>

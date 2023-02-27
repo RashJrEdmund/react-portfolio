@@ -5,10 +5,27 @@ export default function NabBar() {
   return (
     <div className="navbar" id="navbar">
       <div className="profile-icon" />
+
+      <form
+        className="nav-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search Projects"
+        />
+        <button className="search-btn" type="submit">
+          search
+        </button>
+      </form>
+
       <ul className="menu-list">
-        <li>Home</li>
-        <li>Work</li>
-        <li>Contact</li>
+        <li className="menu-btn">Home</li>
+        <li className="menu-btn">Work</li>
+        <li className="menu-btn">Contact</li>
       </ul>
     </div>
   );
