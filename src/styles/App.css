@@ -1,3 +1,59 @@
 .App {
   text-align: center;
 }
+
+.show-more-btn {
+  width: fit-content;
+  height: fit-content;
+  margin: 3rem auto;
+}
+
+.show-more-btn button {
+  background-color: gold;
+  position: relative;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 15px;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.show-more-btn button .slide-span1,
+.show-more-btn button .slide-span2 {
+  background-color: green;
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transition: 0.6s;
+  z-index: -1;
+}
+
+.show-more-btn button .slide-span1 {
+  left: 0;
+}
+
+.show-more-btn button .slide-span2 {
+  right: 0;
+}
+
+.show-more-btn button:hover .slide-span1,
+.show-more-btn button:hover .slide-span2 {
+  width: 100%;
+}
+
+.show-more-btn button .text-span {
+  z-index: 1;
+}
+
+.show-more-btn button .span1,
+.show-more-btn button .span2 {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.show-more-btn button:hover .span1,
+.show-more-btn button:hover .span2 {
+  display: unset;
+  opacity: 1;
+}

@@ -1,16 +1,29 @@
 import React from 'react';
 import '../styles/projectContainer.css';
 import data from '../data/projects.json';
+import MyContext from '../context/MyContext';
 
 export default function ProjectContainer() {
+  const displayHidden = React.useContext(MyContext);
   return (
     <div className="project-container" id="project-container">
       <header className="project-header">Past Projects Below</header>
       <div className="container">
-        {data.map((piece) => {
+        {data.map((piece, index) => {
           return (
-            <a href={piece.link} target="_blank" rel="noreferrer">
-              <div className="project">
+            <a
+              href={piece.link}
+              target="_blank"
+              rel="noreferrer"
+              key={piece.title}
+            >
+              <div
+                className={
+                  index > 5 && displayHidden
+                    ? 'project hidden-project'
+                    : 'project'
+                }
+              >
                 <div
                   className="image-holder"
                   style={{ backgroundImage: `url('${piece.img}')` }}

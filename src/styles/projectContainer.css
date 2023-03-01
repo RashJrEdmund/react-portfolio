@@ -18,18 +18,42 @@
 }
 
 .project-container .container {
+  background-color: green;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 96vw;
+  max-width: 1300px;
   height: fit-content;
+  margin: 0;
 }
 
 .container .project {
-  background-color: ;
-  width: 100%;
+  background-color: purple;
+  width: cal(100% - 10px);
   height: fit-content;
   min-height: 300px;
   margin: 10px;
+  transition: 0.5s;
+}
+
+.container .project:hover {
+  transform: translateY(-20px);
+}
+
+.project.hidden-project {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .project-container .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .project-container .container {
+    grid-template-columns: 1fr;
+  }
 }

@@ -10,10 +10,12 @@ export default function NabBar() {
         className="nav-form"
         onSubmit={(e) => {
           e.preventDefault();
+          e.target.elements.search_input.value = '';
         }}
       >
         <input
           className="search-input"
+          id="search_input"
           type="text"
           placeholder="Search Projects"
         />
