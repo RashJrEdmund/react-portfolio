@@ -1,7 +1,24 @@
 import React from 'react';
 import '../styles/navbar.css';
+import data from '../data/projects.json';
+import MyContext from '../context/MyContext';
 
 export default function NabBar() {
+  const { setMyData } = React.useContext(MyContext);
+
+  const handleSearch = (project) => {
+    if (project === '') {
+      setMyData([...data]);
+      return;
+    }
+
+    console.log('searching for', project);
+    const holder = data.filter((piece) =>
+      piece.title.toLowerCase().includes(project.toLowerCase())
+    );
+    setMyData([...holder]);
+  };
+
   return (
     <div className="navbar" id="navbar">
       <div className="profile-icon" />
@@ -10,6 +27,7 @@ export default function NabBar() {
         className="nav-form"
         onSubmit={(e) => {
           e.preventDefault();
+          handleSearch(e.target.elements.search_input.value);
           e.target.elements.search_input.value = '';
         }}
       >
@@ -17,6 +35,7 @@ export default function NabBar() {
           className="search-input"
           id="search_input"
           type="text"
+          onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search Projects"
         />
         <button className="search-btn" type="submit">

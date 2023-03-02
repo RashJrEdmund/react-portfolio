@@ -1,4 +1,5 @@
 .project-container {
+  background-color: gold;
   width: 100%;
   height: fit-content;
   min-height: 90vh;
@@ -6,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem 10px 1rem;
+  margin: 0 0 1rem;
 }
 
 .project-container .project-header {

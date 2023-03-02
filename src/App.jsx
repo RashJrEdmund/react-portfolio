@@ -1,47 +1,29 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/no-danger */
+/* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable react/jsx-pascal-case */
 import './styles/App.css';
 import React from 'react';
+import MyContext from './context/MyContext';
+import data from './data/projects.json';
+
 import NabBar from './components/NabBar';
 import Hero from './components/Hero';
-import Footer from './components/Footer';
 import ProjectContainer from './components/ProjectContainer';
-import MyContext from './context/MyContext';
+import ShowButton from './components/ShowButton';
+import Footer from './components/Footer';
 
 function App() {
+  const [myData, setMyData] = React.useState(data);
   const [displayHidden, setDisplayHidden] = React.useState(true);
   return (
-    <MyContext.Provider value={displayHidden}>
+    <MyContext.Provider
+      value={{ myData, setMyData, displayHidden, setDisplayHidden }}
+    >
       <div className="App">
         <NabBar />
         <Hero />
-        <ProjectContainer display={displayHidden} />
+        <ProjectContainer />
 
-        <a
-          href={displayHidden ? '#project-container' : '#route_to_nowhere'}
-          className="show-more-btn"
-        >
-          <button
-            type="button"
-            onClick={() => setDisplayHidden((prev) => !prev)}
-            dangerouslySetInnerHTML={{
-              __html: displayHidden
-                ? `
-                  <span class="slide-span1"></span>
-                  <span class="text-span">
-                   showMore <span class="span1"> &#62; </span>
-                  </span>
-                 `
-                : `
-                  <span class="slide-span2"></span>
-                  <span class="text-span">
-                    <span class="span2"> &#60; </span> showLess
-                  </span>
-                `,
-            }}
-          />
-        </a>
+        <ShowButton />
 
         <Footer />
       </div>

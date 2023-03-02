@@ -1,15 +1,14 @@
 import React from 'react';
 import '../styles/projectContainer.css';
-import data from '../data/projects.json';
 import MyContext from '../context/MyContext';
 
 export default function ProjectContainer() {
-  const displayHidden = React.useContext(MyContext);
+  const { myData, displayHidden } = React.useContext(MyContext);
   return (
     <div className="project-container" id="project-container">
       <header className="project-header">Past Projects Below</header>
       <div className="container">
-        {data.map((piece, index) => {
+        {myData.map((piece, index) => {
           return (
             <a
               href={piece.link}
