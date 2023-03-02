@@ -6,15 +6,15 @@ import MyContext from '../context/MyContext';
 export default function NabBar() {
   const { setMyData } = React.useContext(MyContext);
 
-  const handleSearch = (project) => {
-    if (project === '') {
+  const handleSearch = (searchName) => {
+    if (searchName === '') {
       setMyData([...data]);
       return;
     }
 
-    console.log('searching for', project);
+    console.log('searching for', searchName);
     const holder = data.filter((piece) =>
-      piece.title.toLowerCase().includes(project.toLowerCase())
+      piece.title.toLowerCase().includes(searchName.toLowerCase())
     );
     setMyData([...holder]);
   };
