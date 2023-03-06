@@ -32,10 +32,8 @@
 }
 
 .container .project {
-  background-color: purple;
   width: cal(100% - 10px);
   height: fit-content;
-  min-height: 300px;
   margin: 10px;
   transition: 0.5s;
 }
@@ -46,6 +44,19 @@
 
 .project.hidden-project {
   display: none;
+}
+
+.project  .sub_project {
+  background-color: purple;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_project .project_title {
+  background-color: darkgreen;
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -8,7 +8,7 @@ export default function ShowButton() {
   const { displayHidden, setDisplayHidden } = React.useContext(MyContext);
   return (
     <a
-      href={displayHidden ? '#project-container' : '#route_to_nowhere'}
+      href={displayHidden ? '#project-container' : '#route_to_project'}
       className="show-more-btn"
     >
       <button

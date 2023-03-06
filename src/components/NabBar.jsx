@@ -12,7 +12,6 @@ export default function NabBar() {
       return;
     }
 
-    console.log('searching for', searchName);
     const holder = data.filter((piece) =>
       piece.title.toLowerCase().includes(searchName.toLowerCase())
     );
@@ -44,9 +43,15 @@ export default function NabBar() {
       </form>
 
       <ul className="menu-list">
-        <li className="menu-btn">Home</li>
-        <li className="menu-btn">Work</li>
-        <li className="menu-btn">Contact</li>
+        <a className="menu-btn" href="#hero">
+          <li>Home</li>
+        </a>
+        <a className="menu-btn" href="#project-container">
+          <li className="menu-btn">Work</li>
+        </a>
+        <a className="menu-btn" href="#footer">
+          <li>Contact</li>
+        </a>
       </ul>
     </div>
   );
