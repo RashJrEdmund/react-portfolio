@@ -9,6 +9,7 @@ import NabBar from './components/NabBar';
 import Hero from './components/Hero';
 import ProjectContainer from './components/ProjectContainer';
 import ShowButton from './components/ShowButton';
+import AboutMe from './components/AboutMe';
 import Footer from './components/Footer';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <ProjectContainer />
 
         <ShowButton />
+
+        <AboutMe />
 
         <Footer />
       </div>
